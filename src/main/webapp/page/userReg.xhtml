@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:opt="http://primefaces.prime.com.br/optimus"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthroug"
+	xmlns:xforms="http://www.w3.org/1999/xhtml">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+		crossorigin="anonymous" />
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+		integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+h3 {
+	margin-top: 5%;
+	margin-left: 40%;
+}
+
+#page {
+	margin-top: 5%;
+	margin-left: 20%;
+}
+</style>
+</h:head>
+<h:body>
+<p:growl autoUpdate="true" id="msg" showDetail="true"/>
+	<h:form id="form">
+		<div class="form-horizontal">
+		
+			<h3>Cadastro de usuários</h3>
+			<div id="page">
+				<!--Campo Matrícula-->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label">Matrícula:</label>
+					<div class="col-sm-4">
+						<p:inputText value="#{SaveUserBean.user.registration}" id="mat" class="form-control form-control-sm" />
+					</div>
+				</div>
+				<!--Campo Nome -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label">Nome:</label>
+					<div class="col-sm-6">
+						<p:inputText  value="#{SaveUserBean.user.name}" id="nome" class="form-control form-control-sm" />
+					</div>
+				</div>
+				<!--Campo Email -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">E-mail:</label>
+					<div class="col-sm-6">
+						<p:inputText type="text" value="#{SaveUserBean.user.email}" class="form-control form-control-sm" />
+					</div>
+				</div>
+				<!--Campo Senha -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">Senha:</label>
+					<div class="col-sm-4">
+						<p:password type="password" value="#{SaveUserBean.user.senhaUser}" class="form-control form-control-sm" />
+					</div>
+				</div>
+				<!--Campo Localidade -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">Localidade:</label>
+					<div class="col-sm-6">
+						
+						<p:inputText type="text" value="#{SaveUserBean.user.city}" class="form-control form-control-sm" />
+						
+					</div>
+					
+				</div>
+				<!--Campo Tipo -->
+				<div class="form-group row">
+					<label for="colFormLabelSm"  class="col-sm-1 col-form-label ">Tipo:</label>
+					<div class="col-sm-4">
+					<p:selectOneMenu>					
+							<p:selectItem noSelectionOption="true" itemLabel="Escolha o tipo"/>
+							<p:selectItem itemLabel="Gestor"/>
+							<p:selectItem itemLabel="Recursos Humanos"/>
+					</p:selectOneMenu>
+					
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 text-center">
+
+				<p:commandButton value="Salvar" actionListener="#{SaveUserBean.CadUser}" class="btn btn-primary updateBtnStyle" update="form" /> 
+
+				<button onclick="clear()" class="btn btn-primary">Limpar</button>
+				<button type="button" class="btn btn-primary">Voltar</button>
+			</div>
+		</div>
+	</h:form>
+
+</h:body>
+
+</html>

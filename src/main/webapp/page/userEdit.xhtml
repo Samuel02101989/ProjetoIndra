@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:opt="http://primefaces.prime.com.br/optimus"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthroug"
+	xmlns:xforms="http://www.w3.org/1999/xhtml">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+		crossorigin="anonymous" />
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+		integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+h3 {
+	margin-top: 5%;
+	margin-left: 40%;
+}
+
+#page {
+	margin-top: 5%;
+	margin-left: 20%;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<div class="form-horizontal">
+			<h3>Edição de usuário</h3>
+			<div id="page">
+				<!--Campo Matrícula-->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label">Matrícula:</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control form-control-sm" />
+					</div>
+				</div>
+
+				<!--Campo Nome -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label">Nome:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control form-control-sm" />
+						
+					<!-- <p:inputText id="nameUser" value="#{SaveJPBean.jp.name}"/> -->	
+					</div>
+				</div>
+
+				<!--Campo Email -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">E-mail:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control form-control-sm" />
+					</div>
+				</div>
+
+				<!--Campo Localidade -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">Localidade:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control form-control-sm" />
+					</div>
+				</div>
+
+
+				<!--Campo Tipo -->
+				<div class="form-group row">
+					<label for="colFormLabelSm" class="col-sm-1 col-form-label ">Tipo:</label>
+					<div class="col-sm-4">
+						<select class="custom-select form-control-sm"
+							style="height: 30px; width: 210px;">
+							<option selected="selected">Escolha o tipo</option>
+							<option value="1">Gestor</option>
+							<option value="2">Recursos Humanos</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-12 text-center">
+
+				<a href="/usuarios"><button type="button" onclick="salvar()"
+						class="btn btn-primary">Salvar</button></a>
+
+				<button onclick="clear()" class="btn btn-primary">Limpar</button>
+				<a href="/usuarios"><button type="button"
+						class="btn btn-primary">Voltar</button></a>
+
+			</div>
+		</div>
+	</h:form>
+
+</h:body>
+
+</html>
