@@ -38,13 +38,13 @@ public class LoginManageBean {
 		
 		user = userDao.login(login, password);
 		if (user == null) {
-			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "User not found", "Login Error"));
 
 		} else {
 			try {
-				FacesContext.getCurrentInstance().getExternalContext().redirect("/page/userReg.xhtml");
+				FacesContext.getCurrentInstance().getExternalContext()
+					.redirect("/ProjetoIndra/userReg.xhtml");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
